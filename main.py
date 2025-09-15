@@ -1,6 +1,7 @@
 from dotenv import load_dotenv
 from langchain_core.prompts import PromptTemplate
 from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 
 load_dotenv()
 
@@ -30,7 +31,11 @@ Musk's political activities, views, and statements have made him a polarizing fi
         input_variables=["information"], template=summary_template
     )
 
-    llm = ChatOllama(temperature=0.3, model="gemma3:270m")
+    #llm = ChatOllama(temperature=0.3, model="gemma3:270m")
+
+    llm = ChatGroq(temperature=0,
+                   model="deepseek-r1-distill-llama-70b",
+                   reasoning_format="parsed")
     #llm = ChatOpenAI(temperature=0, model="gpt-5")
     chain = summary_prompt_template | llm
 
