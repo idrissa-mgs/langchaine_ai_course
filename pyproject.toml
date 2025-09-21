@@ -12,5 +12,10 @@ dependencies = [
     "langchain-openai>=0.3.30",
     "python-dotenv>=1.1.1",
     "langchain-groq>=0.3.8",
-    "langchain-tavily>=0.2.11" # use for search integration on agent
+    "langchain-tavily>=0.2.11", # use for search integration on agent
+    "langchain-pinecone",
+    "langchainhub",
+    "langchain_community",
+    "pypdf",
+    "langchain-pinecone"
 ]
